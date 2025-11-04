@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: spark-jobs
+  namespace: argocd
+spec:
+  project: data-engineering
+  source:
+    repoURL: https://github.com/your-org/data-infrastructure
+    path: spark/overlays/production
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: spark-jobs
+  syncPolicy:
+    automated:
+      prune: false  # Spark Job 결과 보존
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 3
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m
