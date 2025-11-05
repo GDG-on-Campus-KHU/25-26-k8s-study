@@ -4,11 +4,11 @@ metadata:
   name: kafka-cluster
   namespace: argocd
 spec:
-  project: data-engineering
+  project: default
   source:
-    repoURL: https://github.com/your-org/data-infrastructure
-    path: kafka/production
-    targetRevision: main
+    repoURL: https://github.com/GDG-on-Campus-KHU/25-26-k8s-study-Data-InfraStructure.git
+    path: data-infrastructure/kafka/production
+    targetRevision: master
     directory:
       recurse: true
       jsonnet: {}

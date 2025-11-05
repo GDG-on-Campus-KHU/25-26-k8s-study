@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: data-engineering
+  project: default
 
   source:
     repoURL: https://airflow.apache.org/

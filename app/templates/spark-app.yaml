@@ -6,9 +6,9 @@ metadata:
 spec:
   project: data-engineering
   source:
-    repoURL: https://github.com/your-org/data-infrastructure
-    path: spark/overlays/production
-    targetRevision: main
+    repoURL: https://github.com/GDG-on-Campus-KHU/25-26-k8s-study-Data-InfraStructure.git
+    path: data-infrastructure/spark/overlays/production
+    targetRevision: master
   destination:
     server: https://kubernetes.default.svc
     namespace: spark-jobs
